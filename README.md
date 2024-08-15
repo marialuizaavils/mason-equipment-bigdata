@@ -1,4 +1,4 @@
-# mason-equipment-bigdata
+# masonequipment-bigdata
 
 Trabalho de Extensão para conclusão de curso na Estacío
 
