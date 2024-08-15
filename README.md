@@ -1,6 +1,6 @@
 # masonequipment-bigdata
 
-Trabalho de Extensão para conclusão de curso na Estacío
+Trabalho de Extensão para conclusão de curso na Estacío.
 
 
 1 DIAGNÓSTICO E TEORIZAÇÃO 
