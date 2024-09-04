@@ -1,0 +1,38 @@
+#Instale Pandas e PySpark
+
+pip install pandas
+pip install pyspark
+
+#importe o excel para o pandas 
+import pandas as pd
+
+# Caminho para o arquivo Excel
+df = pd.read_excel('/mnt/data/Programa Excelencia Komatsu.xlsx')
+
+# Visualize os primeiros registros
+print(df.head())
+
+#realize analise com pandas 
+# Exemplo de análise básica
+print(df.describe())
+
+# Filtrando dados específicos
+setor_qualidade = df[df['Setor'] == 'Qualidade']
+print(setor_qualidade)
+
+#usando pyspark para grande volume de dados
+from pyspark.sql import SparkSession
+
+# Criar uma sessão Spark
+spark = SparkSession.builder.appName('MasonEquipment').getOrCreate()
+
+# Ler os dados
+df_spark = spark.read.csv('/mnt/data/Programa Excelencia Komatsu.xlsx')
+df_spark.show()
+
+#criar novos dataframes melhorados 
+# Exemplo de criação de um novo DataFrame com dados filtrados
+df_melhorado = df[['Setor', 'Meta', 'Cumprimento']]
+
+# Salve a nova base de dados
+df_melhorado.to_excel('Base_Melhorada.xlsx', index=False)
